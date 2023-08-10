@@ -23,7 +23,17 @@ The states are calculated considering the resized screen values (described in th
 
   I made the assumption that i don't need to know the position of the competitor in order to win the game, indeed i counted the states only for agent_0. This assumption make the game partial observable.
 
-  In this project I invesigated the RL potentials regarding the extraction of smart behaviours. I focused mainly on the hard convergence problem due to **sparsity** i.e. the **qtables** are big. In order to tackle this problem I experimented the effects of [gaussian reward](#gaussian-rewards) (smoother reward) and qtable initialization.
+  In this project I invesigated the RL potentials regarding the extraction of smart behaviours. I focused mainly on the hard convergence problem due to **sparsity** i.e. the **qtables** are big. In order to tackle this problem I experimented the effects of [gaussian reward](#gaussian-rewards) (smoother reward) and [qtable initialization](#qtable-initialization).
+
+## Qtable Initialization
+
+<p align="center" width="100%">
+<img height="300" src="train_history/rnd_init_vs_no_init.png">
+</p>
+
+At first I was convinced that initializing the qtable with values different from zero could be a good solution as happens in neural networks. I soon realized that the random initialization weren't actually good. Indeed It introduced noise in the q-learning convergence (since it relies on qtable values). 
+
+The image above proves that behaviour. The random initialization works worse than a zero initialization.
 
 ## Gaussian Rewards
 
@@ -66,7 +76,6 @@ The title of each subplots is define the coordinate position of the racket when 
 ### 5x5 Kernel
 
 The following images show the qtable state for each action of the pong racket of a 5x5 smoothed reward training.
-
 The image meaning is the same described in the [3x3 reward](#3x3-kernel) section.
 
 <p align="center" width="100%">
