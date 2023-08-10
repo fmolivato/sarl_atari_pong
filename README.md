@@ -6,6 +6,8 @@
 
 Atari Pong Single-Agent Classic Reinforcement Learning (no Deep RL) as course project of Distributed Artificial Intelligence, University of Modena and Reggio Emilia, Italy
 
+[Here the slides of the presentation :bar_chart:](https://www.canva.com/design/DAFbB3ySp6c/PZjROScCD669O0PH3GT8-A/view?utm_content=DAFbB3ySp6c&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
+
 # Observation preprocessing
 
 The screen pixel observation is downsampled on rows and columns by a factor of 3 and 2 respectively. Reaching a shape of 53 x 80.
@@ -13,30 +15,35 @@ I'm considering just the pixels from 35 to 92 i.e. cutting out the side walls an
 
 # Q Learning
 
-## Past state and past action (maybe in the docs)
-
-In the q-learning formula it's necessary to use the past action and state to compute.
-In the very first iteration (for each agent) i don't have any past variables, so i initialized them as empty values.
-
-## Q Tables
-
 The states are calculated considering the resized screen values (described in the previous section) as:
 
-- **Cooperative agent's states** => 53\*80 (ball positions) \* 53 (agent_0) \* 53(agent_1) \* 6 (n_actions)= 71 460 960 states \* 4 byte (float32) = 286 MB
-
-- **Coompetitive agent's states** => 53\*80 (ball positions) \* 53 (agent_0) \* 6 (n_actions) = 1 348 320 states \* 4 byte (float32) = 5.4 MB
+ 53\*80 (ball positions) \* 53 (agent) \* 6 (n_actions) = 1 348 320 states \* 4 byte (float32) = 5.4 MB
 
   I made the assumption that i don't need to know the position of the competitor in order to win the game, indeed i counted the states only for agent_0. This assumption make the game partial observable.
 
-  It is possible a fully observable settings for the game (the states equal to the ones of the cooperative situation).
-  The RL could extract smarter behaviours indeed, however the convergence will be harder bacause of the **sparsity** and the greater size of the **qtables** (~98% bigger).
+  In this project I invesigated the RL potentials regarding the extraction of smart behaviours. I focused mainly on the hard convergence problem due to **sparsity** i.e. the **qtables** are big. In order to tackle this problem I experimented the effects of [gaussian reward](#gaussian-rewards) (smoother reward) and qtable initialization.
 
 ## Gaussian Rewards
 
 In order to address the **sparsity** problem, I implemented a **gaussian smoothing** on the reward signal.
 Since exists a close relationship between the states and the screen's pixels, it make sense to spead the reward spatially by smoothing (e.g. if a specific pixel is a great location to catch the ball than it's reasonable that the near ones are a good positions too).
 
+<figure align="center" width="100%">
+<img height="300" src="train_history/punctual_vs_gaussian.png"/>
+<figcaption>It shows that the gaussian reward converge faster to a defined threshold.<br> mCR10 is the mean over the last 10 steps of the cumulative reward signal.</figcaption>
+</figure>
+
+### Reward kernel: 3x3 vs 5x5
+
+<figure align="center" width="100%">
+<img height="300" src="train_history/3x3_vs_5x5.png">
+<figcaption>It shows that the 5x5 reward converge faster than the 3x3.<br> mCR10 is the mean over the last 10 steps of the cumulative reward signal.</figcaption>
+</figure>
+
 ### 3x3 Kernel
+The following images show the qtable state for each action of the pong racket of a 3x3 smoothed reward training.
+
+The title of each subplots is define the coordinate position of the racket when the action is performed. The subplot itself shows the ball position. Basically It tells whether is good (white) of bad(black), for the racket, to be in that position (subplot number title) and doing that action. 
 
 <p align="center" width="100%">
 <img width="100%" height="300" src="train_history/gaussian_3_57000/gaussian_3_57000_QT_A0.png">
@@ -56,6 +63,10 @@ Since exists a close relationship between the states and the screen's pixels, it
 
 ### 5x5 Kernel
 
+The following images show the qtable state for each action of the pong racket of a 5x5 smoothed reward training.
+
+The image meaning is the same described in the [3x3 reward](#3x3-kernel) section.
+
 <p align="center" width="100%">
 <img width="100%" height="300" src="train_history/gaussian_5_57000/gaussian_5_57000_QT_A0.png">
 </p>
@@ -69,10 +80,5 @@ Since exists a close relationship between the states and the screen's pixels, it
 </p>
 
 <p align="center" width="100%">
-<img width="100%" height="300" src="train_history/gaussian_5_57000/gaussian_5_57000_QT_A3.png">
+<img width="100%" height="300" src="train_history/gaussian_3_57000/gaussian_3_57000_QT_A0.png">
 </p>
-
-
-## :warning: Petting Zoo Warning :warning:
-
-When termination or truncation became true, ensure that the action is setted to None otherwise an Exception comes up.
