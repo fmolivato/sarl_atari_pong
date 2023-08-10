@@ -1,8 +1,8 @@
+# Single-Agent RL Atari Pong
+
 <p align="center" width="100%">
 <img width="220" height="300" src="train_history/020_qlearn/match_200.gif">
 </p>
-
-# Single-Agent RL Atari Pong
 
 Atari Pong Single-Agent Classic Reinforcement Learning (no Deep RL) as course project of Distributed Artificial Intelligence, University of Modena and Reggio Emilia, Italy
 
