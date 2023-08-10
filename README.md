@@ -39,37 +39,37 @@ Since exists a close relationship between the states and the screen's pixels, it
 ### 3x3 Kernel
 
 <p align="center" width="100%">
-<img width="220" height="300" src="train_history/gaussian_3_57000/gaussian_3_57000_QT_A0.png">
+<img width="100%" height="300" src="train_history/gaussian_3_57000/gaussian_3_57000_QT_A0.png">
 </p>
 
 <p align="center" width="100%">
-<img width="220" height="300" src="train_history/gaussian_3_57000/gaussian_3_57000_QT_A1.png">
+<img width="100%" height="300" src="train_history/gaussian_3_57000/gaussian_3_57000_QT_A1.png">
 </p>
 
 <p align="center" width="100%">
-<img width="220" height="300" src="train_history/gaussian_3_57000/gaussian_3_57000_QT_A2.png">
+<img width="100%" height="300" src="train_history/gaussian_3_57000/gaussian_3_57000_QT_A2.png">
 </p>
 
 <p align="center" width="100%">
-<img width="220" height="300" src="train_history/gaussian_3_57000/gaussian_3_57000_QT_A3.png">
+<img width="100%" height="300" src="train_history/gaussian_3_57000/gaussian_3_57000_QT_A3.png">
 </p>
 
 ### 5x5 Kernel
 
 <p align="center" width="100%">
-<img width="220" height="300" src="train_history/gaussian_5_57000/gaussian_5_57000_QT_A0.png">
+<img width="100%" height="300" src="train_history/gaussian_5_57000/gaussian_5_57000_QT_A0.png">
 </p>
 
 <p align="center" width="100%">
-<img width="220" height="300" src="train_history/gaussian_5_57000/gaussian_5_57000_QT_A1.png">
+<img width="100%" height="300" src="train_history/gaussian_5_57000/gaussian_5_57000_QT_A1.png">
 </p>
 
 <p align="center" width="100%">
-<img width="220" height="300" src="train_history/gaussian_5_57000/gaussian_5_57000_QT_A2.png">
+<img width="100%" height="300" src="train_history/gaussian_5_57000/gaussian_5_57000_QT_A2.png">
 </p>
 
 <p align="center" width="100%">
-<img width="220" height="300" src="train_history/gaussian_5_57000/gaussian_5_57000_QT_A3.png">
+<img width="100%" height="300" src="train_history/gaussian_5_57000/gaussian_5_57000_QT_A3.png">
 </p>
 
 
