@@ -15,15 +15,15 @@ Atari Pong Single-Agent Classic Reinforcement Learning (no Deep RL) as course pr
 The screen pixel observation is downsampled on rows and columns by a factor of 3 and 2 respectively. Reaching a shape of 53 x 80.
 I'm considering just the pixels from 35 to 92 i.e. cutting out the side walls and the scores to reduce the amount of pixels.
 
-# Q Learning
-
 The states are calculated considering the resized screen values (described in the previous section) as:
 
  $$53*80 (ball positions) * 53 (agent) * 6 (n\_actions) = 1 348 320 (states) * 4 (byte) = 5.4 MB$$
 
   I made the assumption that i don't need to know the position of the competitor in order to win the game, indeed i counted the states only for agent_0. This assumption make the game partial observable.
 
-  In this project I invesigated the RL potentials regarding the extraction of smart behaviours. I focused mainly on the hard convergence problem due to **sparsity** i.e. the **qtables** are big. In order to tackle this problem I experimented the effects of [gaussian reward](#gaussian-rewards) (smoother reward) and [qtable initialization](#qtable-initialization).
+# Learning
+
+  In this project I invesigated the Q-Learning (RL) potentials regarding the extraction of smart behaviours. I focused mainly on the hard convergence problem due to **sparsity** i.e. the **qtables** are big. In order to tackle this problem I experimented the effects of [gaussian reward](#gaussian-rewards) (smoother reward) and [qtable initialization](#qtable-initialization).
 
 ## Qtable Initialization
 
