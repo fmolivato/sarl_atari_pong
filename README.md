@@ -28,17 +28,17 @@ The states are calculated considering the resized screen values (described in th
 In order to address the **sparsity** problem, I implemented a **gaussian smoothing** on the reward signal.
 Since exists a close relationship between the states and the screen's pixels, it make sense to spead the reward spatially by smoothing (e.g. if a specific pixel is a great location to catch the ball than it's reasonable that the near ones are a good positions too).
 
-<figure align="center" width="100%">
+<p align="center" width="100%">
 <img height="300" src="train_history/punctual_vs_gaussian.png"/>
-<figcaption>It shows that the gaussian reward converge faster to a defined threshold.<br> mCR10 is the mean over the last 10 steps of the cumulative reward signal.</figcaption>
-</figure>
+</p>
+It shows that the gaussian reward converge faster to a defined threshold. mCR10 is the mean over the last 10 steps of the cumulative reward signal.
 
 ### Reward kernel: 3x3 vs 5x5
 
-<figure align="center" width="100%">
+<p align="center" width="100%">
 <img height="300" src="train_history/3x3_vs_5x5.png">
-<figcaption>It shows that the 5x5 reward converge faster than the 3x3.<br> mCR10 is the mean over the last 10 steps of the cumulative reward signal.</figcaption>
-</figure>
+</p>
+It shows that the 5x5 reward converge faster than the 3x3. mCR10 is the mean over the last 10 steps of the cumulative reward signal.
 
 ### 3x3 Kernel
 The following images show the qtable state for each action of the pong racket of a 3x3 smoothed reward training.
