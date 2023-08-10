@@ -1,4 +1,4 @@
-# marl_atari_pong
+# Single-Agent RL Atari Pong
 
 Atari Pong Multi-Agent Classic Reinforcement Learning (no Deep RL) as course project of Distributed Artificial Intelligence, University of Modena and Reggio Emilia, Italy
 
