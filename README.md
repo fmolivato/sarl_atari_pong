@@ -1,11 +1,11 @@
 # Single-Agent RL Atari Pong
 
-Atari Pong Multi-Agent Classic Reinforcement Learning (no Deep RL) as course project of Distributed Artificial Intelligence, University of Modena and Reggio Emilia, Italy
+Atari Pong Single-Agent Classic Reinforcement Learning (no Deep RL) as course project of Distributed Artificial Intelligence, University of Modena and Reggio Emilia, Italy
 
 # Observation preprocessing
 
 The screen pixel observation is downsampled on rows and columns by a factor of 3 and 2 respectively. Reaching a shape of 53 x 80.
-I'm considering just the pixels from 35 to 92 aka cutting out the side walls and the scores to reduce the amount of pixels.
+I'm considering just the pixels from 35 to 92 i.e. cutting out the side walls and the scores to reduce the amount of pixels.
 
 # Q Learning
 
