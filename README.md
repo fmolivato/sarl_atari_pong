@@ -31,32 +31,46 @@ The states are calculated considering the resized screen values (described in th
   It is possible a fully observable settings for the game (the states equal to the ones of the cooperative situation).
   The RL could extract smarter behaviours indeed, however the convergence will be harder bacause of the **sparsity** and the greater size of the **qtables** (~98% bigger).
 
-## Rewards
+## Gaussian Rewards
 
 In order to address the **sparsity** problem, I implemented a **gaussian smoothing** on the reward signal.
 Since exists a close relationship between the states and the screen's pixels, it make sense to spead the reward spatially by smoothing (e.g. if a specific pixel is a great location to catch the ball than it's reasonable that the near ones are a good positions too).
 
-# Emergent behaviours
-
-## A good throw is useless
-
-This behaviour emerge during the match of Q-Learning vs Random agent.
-
-The Q-Learning agent don't need to learn to throw the ball since it will come anyway shortly from the random agent. The learning agent focus only on a good racket's placing which lead him to several wins after just 200 episodes
+### 3x3 Kernel
 
 <p align="center" width="100%">
-<img src="train_history/000_qlearn_vs_rnd/first_0.png">
-Q-Learning agent's scores during 2000 episodes
+<img width="220" height="300" src="train_history/gaussian_3_57000/gaussian_3_57000_QT_A0.png">
 </p>
-
-## A good throw is important (Q-Learning vs Q-Learning)
 
 <p align="center" width="100%">
-<img width="220" height="300" src="train_history/020_qlearn/match_2.gif">
+<img width="220" height="300" src="train_history/gaussian_3_57000/gaussian_3_57000_QT_A1.png">
 </p>
 
-## Shy replies (Q-Learning vs Q-Learning)
+<p align="center" width="100%">
+<img width="220" height="300" src="train_history/gaussian_3_57000/gaussian_3_57000_QT_A2.png">
+</p>
 
+<p align="center" width="100%">
+<img width="220" height="300" src="train_history/gaussian_3_57000/gaussian_3_57000_QT_A3.png">
+</p>
+
+### 5x5 Kernel
+
+<p align="center" width="100%">
+<img width="220" height="300" src="train_history/gaussian_5_57000/gaussian_5_57000_QT_A0.png">
+</p>
+
+<p align="center" width="100%">
+<img width="220" height="300" src="train_history/gaussian_5_57000/gaussian_5_57000_QT_A1.png">
+</p>
+
+<p align="center" width="100%">
+<img width="220" height="300" src="train_history/gaussian_5_57000/gaussian_5_57000_QT_A2.png">
+</p>
+
+<p align="center" width="100%">
+<img width="220" height="300" src="train_history/gaussian_5_57000/gaussian_5_57000_QT_A3.png">
+</p>
 
 
 # Petting zoo warning
