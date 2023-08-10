@@ -7,7 +7,7 @@
 Atari Pong Single-Agent Classic Reinforcement Learning (no Deep RL) as course project of Distributed Artificial Intelligence, University of Modena and Reggio Emilia, Italy
 
 <p align="center" width="100%" >
-<a href="https://www.canva.com/design/DAFbB3ySp6c/PZjROScCD669O0PH3GT8-A/view?utm_content=DAFbB3ySp6c&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink">Here the slides of the presentation :bar_chart:</a>
+<a href="https://www.canva.com/design/DAFbB3ySp6c/PZjROScCD669O0PH3GT8-A/view?utm_content=DAFbB3ySp6c&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink">:bar_chart: Here the slides of the presentation :bar_chart:</a>
 </p>
 
 # Observation preprocessing
@@ -30,7 +30,7 @@ The states are calculated considering the resized screen values (described in th
 In order to address the **sparsity** problem, I implemented a **gaussian smoothing** on the reward signal.
 Since exists a close relationship between the states and the screen's pixels, it make sense to spead the reward spatially by smoothing (e.g. if a specific pixel is a great location to catch the ball than it's reasonable that the near ones are a good positions too).
 
-
+<p align="center" width="100%">
 <img height="300" src="train_history/punctual_vs_gaussian.png"/>
 </p>
 It shows that the gaussian reward converge faster to a defined threshold. mCR10 is the mean over the last 10 steps of the cumulative reward signal.
