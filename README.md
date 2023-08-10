@@ -73,6 +73,6 @@ Since exists a close relationship between the states and the screen's pixels, it
 </p>
 
 
-# Petting zoo warning
+# Petting Zoo Warning :warning:
 
 When termination or truncation became true, ensure that the action is setted to None otherwise an Exception comes up.
