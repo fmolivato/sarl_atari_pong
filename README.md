@@ -55,7 +55,7 @@ It shows that the 5x5 reward converge faster than the 3x3. mCR10 is the mean ove
 ### 3x3 Kernel
 The following images show the qtable state (in 3x3 smootherd reward setting) for each action of the racket.
 
-The title of each subplots defines the coordinate position of the racket when the action is performed. The subplot itself shows the ball position. Basically It tells whether is good (white) of bad(black), for the racket, to be in that position (subplot number title) and doing that action. 
+The title of each subplots defines the coordinate position of the racket when the action is performed. The subplot itself shows the ball position. Basically It tells whether is good (white) or bad(black), for the racket, to be in that position (subplot number title) and doing that action. 
 
 <p align="center" width="100%">
 <img width="100%" height="300" src="train_history/gaussian_3_57000/gaussian_3_57000_QT_A0.png">
