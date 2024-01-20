@@ -91,5 +91,5 @@ The image meaning is the same described in the [3x3 reward](#3x3-kernel) section
 </p>
 
 <p align="center" width="100%">
-<img width="100%" height="300" src="train_history/gaussian_3_57000/gaussian_3_57000_QT_A0.png">
+<img width="100%" height="300" src="train_history/gaussian_3_57000/gaussian_3_57000_QT_A3.png">
 </p>
