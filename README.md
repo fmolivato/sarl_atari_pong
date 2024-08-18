@@ -6,9 +6,9 @@
 
 Atari Pong Single-Agent Classic Reinforcement Learning (no Deep RL) as course project of Distributed Artificial Intelligence, University of Modena and Reggio Emilia, Italy
 
-<p align="center" width="100%" >
+<!--<p align="center" width="100%" >
 <a href="https://www.canva.com/design/DAFbB3ySp6c/PZjROScCD669O0PH3GT8-A/view?utm_content=DAFbB3ySp6c&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink">:bar_chart: Here the slides of the presentation :bar_chart:</a>
-</p>
+</p>-->
 
 # Observation preprocessing
 
@@ -17,7 +17,7 @@ I'm considering just the pixels from 35 to 92 i.e. cutting out the side walls an
 
 The states are calculated considering the resized screen values (described in the previous section) as:
 
- $$53*80 (ball positions) * 53 (agent) * 6 (n actions) = 1 348 320 (states) * 4 (byte) = 5.4 MB$$
+ $$53*80 (pos\\_ball) * 53 (pos\\_agent) * 6 (n\\_actions) = 1 348 320 (states) * 4 (byte) = 5.4 MB$$
 
   I made the assumption that i don't need to know the position of the competitor in order to win the game, indeed i counted the states only for agent_0. This assumption make the game partial observable.
 
